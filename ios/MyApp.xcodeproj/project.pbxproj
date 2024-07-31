@@ -14,12 +14,12 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-MyApp-MyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MyApp-MyAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		84BCD31B2C58EE9D005E6B15 /* logo_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BCD3152C58EE9D005E6B15 /* logo_2@2x.png */; };
-		84BCD31C2C58EE9D005E6B15 /* logo_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BCD3162C58EE9D005E6B15 /* logo_2@3x.png */; };
-		84BCD3202C58F334005E6B15 /* logo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BCD31E2C58F334005E6B15 /* logo_1.png */; };
-		84BCD3212C58F334005E6B15 /* logo_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BCD31F2C58F334005E6B15 /* logo_1@2x.png */; };
-		84BCD3242C58F352005E6B15 /* logo_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BCD3222C58F352005E6B15 /* logo_3@3x.png */; };
-		84BCD3252C58F352005E6B15 /* logo_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BCD3232C58F352005E6B15 /* logo_3.png */; };
+		846705992C5A1F0C00C4775E /* logo_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846705932C5A1F0C00C4775E /* logo_3@3x.png */; };
+		8467059A2C5A1F0C00C4775E /* logo_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846705942C5A1F0C00C4775E /* logo_1@2x.png */; };
+		8467059B2C5A1F0C00C4775E /* logo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 846705952C5A1F0C00C4775E /* logo_1.png */; };
+		8467059C2C5A1F0C00C4775E /* logo_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846705962C5A1F0C00C4775E /* logo_2@2x.png */; };
+		8467059D2C5A1F0C00C4775E /* logo_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846705972C5A1F0C00C4775E /* logo_2@3x.png */; };
+		8467059E2C5A1F0C00C4775E /* logo_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 846705982C5A1F0C00C4775E /* logo_3.png */; };
 		DCAE34195FB8B1EC10DE9EFA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EE5D1424028EADB21911E24C /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -50,12 +50,12 @@
 		5B7EB9410499542E8C5724F5 /* Pods-MyApp-MyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp-MyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-MyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84BCD3152C58EE9D005E6B15 /* logo_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_2@2x.png"; path = "../../Downloads/logo_2@2x.png"; sourceTree = "<group>"; };
-		84BCD3162C58EE9D005E6B15 /* logo_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_2@3x.png"; path = "../../Downloads/logo_2@3x.png"; sourceTree = "<group>"; };
-		84BCD31E2C58F334005E6B15 /* logo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_1.png; path = ../../Downloads/logo_1.png; sourceTree = "<group>"; };
-		84BCD31F2C58F334005E6B15 /* logo_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_1@2x.png"; path = "../../Downloads/logo_1@2x.png"; sourceTree = "<group>"; };
-		84BCD3222C58F352005E6B15 /* logo_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_3@3x.png"; path = "../../Downloads/logo_3@3x.png"; sourceTree = "<group>"; };
-		84BCD3232C58F352005E6B15 /* logo_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_3.png; path = ../../Downloads/logo_3.png; sourceTree = "<group>"; };
+		846705932C5A1F0C00C4775E /* logo_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_3@3x.png"; path = "../../../Downloads/logo_3@3x.png"; sourceTree = "<group>"; };
+		846705942C5A1F0C00C4775E /* logo_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_1@2x.png"; path = "../../../Downloads/logo_1@2x.png"; sourceTree = "<group>"; };
+		846705952C5A1F0C00C4775E /* logo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_1.png; path = ../../../Downloads/logo_1.png; sourceTree = "<group>"; };
+		846705962C5A1F0C00C4775E /* logo_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_2@2x.png"; path = "../../../Downloads/logo_2@2x.png"; sourceTree = "<group>"; };
+		846705972C5A1F0C00C4775E /* logo_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_2@3x.png"; path = "../../../Downloads/logo_2@3x.png"; sourceTree = "<group>"; };
+		846705982C5A1F0C00C4775E /* logo_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_3.png; path = ../../../Downloads/logo_3.png; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MyApp-MyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp-MyAppTests.release.xcconfig"; path = "Target Support Files/Pods-MyApp-MyAppTests/Pods-MyApp-MyAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EE5D1424028EADB21911E24C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = MyApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -158,12 +158,12 @@
 		84BCD3112C58ED62005E6B15 /* AppIcons */ = {
 			isa = PBXGroup;
 			children = (
-				84BCD3232C58F352005E6B15 /* logo_3.png */,
-				84BCD3222C58F352005E6B15 /* logo_3@3x.png */,
-				84BCD31E2C58F334005E6B15 /* logo_1.png */,
-				84BCD31F2C58F334005E6B15 /* logo_1@2x.png */,
-				84BCD3152C58EE9D005E6B15 /* logo_2@2x.png */,
-				84BCD3162C58EE9D005E6B15 /* logo_2@3x.png */,
+				846705942C5A1F0C00C4775E /* logo_1@2x.png */,
+				846705952C5A1F0C00C4775E /* logo_1.png */,
+				846705962C5A1F0C00C4775E /* logo_2@2x.png */,
+				846705972C5A1F0C00C4775E /* logo_2@3x.png */,
+				846705982C5A1F0C00C4775E /* logo_3.png */,
+				846705932C5A1F0C00C4775E /* logo_3@3x.png */,
 			);
 			name = AppIcons;
 			sourceTree = "<group>";
@@ -272,14 +272,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BCD31B2C58EE9D005E6B15 /* logo_2@2x.png in Resources */,
-				84BCD3212C58F334005E6B15 /* logo_1@2x.png in Resources */,
+				8467059B2C5A1F0C00C4775E /* logo_1.png in Resources */,
+				8467059C2C5A1F0C00C4775E /* logo_2@2x.png in Resources */,
+				846705992C5A1F0C00C4775E /* logo_3@3x.png in Resources */,
+				8467059E2C5A1F0C00C4775E /* logo_3.png in Resources */,
+				8467059D2C5A1F0C00C4775E /* logo_2@3x.png in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				84BCD3202C58F334005E6B15 /* logo_1.png in Resources */,
-				84BCD31C2C58EE9D005E6B15 /* logo_2@3x.png in Resources */,
+				8467059A2C5A1F0C00C4775E /* logo_1@2x.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				84BCD3252C58F352005E6B15 /* logo_3.png in Resources */,
-				84BCD3242C58F352005E6B15 /* logo_3@3x.png in Resources */,
 				DCAE34195FB8B1EC10DE9EFA /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
