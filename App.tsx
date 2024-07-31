@@ -5,114 +5,69 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+import React, {useEffect, useState} from 'react';
+import {FlatList, SafeAreaView, Text, TouchableOpacity} from 'react-native';
+import {changeIcon, getIcon} from 'react-native-change-icon';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  const onPressIcon = (item: any) => () => {
+    changeIcon(item.iconName);
+    setAppDefaultIcon(item.iconName);
   };
+  const [appDefaultIcon, setAppDefaultIcon] = useState('');
 
+  async function getCurrentIcon() {
+    try {
+      const res: any = await getIcon();
+      setAppDefaultIcon(res);
+    } catch (error) {}
+  }
+
+  useEffect(() => {
+    getCurrentIcon();
+  }, []);
+
+  const renderItem = ({item}: {item: {name: string; iconName: string}}) => {
+    return (
+      <TouchableOpacity
+        onPress={onPressIcon(item)}
+        style={{
+          marginVertical: 10,
+          borderRadius: 10,
+          marginHorizontal: 30,
+          borderWidth: 2,
+          borderColor: '#CAD0EA',
+          paddingVertical: 20,
+          alignContent: 'center',
+          justifyContent: 'center',
+          backgroundColor:
+            appDefaultIcon === item.iconName ? '#d1cdea' : '#CAD0EA40',
+        }}>
+        <Text style={{alignSelf: 'center', fontWeight: '800'}}>
+          {item.name}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+    <SafeAreaView>
+      <Text
+        style={{
+          alignSelf: 'center',
+          fontWeight: 'bold',
+          fontSize: 26,
+          color: '#8d97a4',
+        }}>
+        Change APP Icon
+      </Text>
+      <FlatList data={data} renderItem={renderItem} />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
 export default App;
+
+const data = [
+  {name: 'Zomato', iconName: 'logo_1'},
+  {name: 'Swiggy', iconName: 'logo_2'},
+  {name: 'Insta-Mart', iconName: 'logo_3'},
+];
