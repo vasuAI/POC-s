@@ -7,7 +7,7 @@ import {
 } from '../variants/variant-alpha/screenNames';
 import {routeScreensBeta} from '../variants/variant-beta/screenNames';
 
-const CLIENT = true ? 'alpha' : 'beta';
+// const CLIENT = VARIANT ? 'alpha' : 'beta';
 
 const getScreens = () => {
   switch (VARIANT) {
@@ -16,7 +16,7 @@ const getScreens = () => {
     case 'beta':
       return routeScreensBeta;
     default:
-      throw new Error(`Unknown client: ${CLIENT}`);
+      throw new Error(`Unknown client: ${VARIANT}`);
   }
 };
 
@@ -27,7 +27,7 @@ const AppNavigator = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <Stack.Navigator initialRouteName={ScreenNamesAlpha.AlphaHome}>
+    <Stack.Navigator initialRouteName={ScreenNamesAlpha.RootTab}>
       {Screens.map((screen: any) => (
         <Stack.Screen
           key={screen.name}
