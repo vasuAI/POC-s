@@ -1,118 +1,75 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
+  Button,
+  FlatList,
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import Butter from 'buttercms';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const App = () => {
+  const butter = Butter('6e7fc0585176443eec5478d800b923aa5709d57b');
+  const [data, setData] = useState([]);
+  async function getPosts() {
+    try {
+      const response: any = await butter.post.list({page: 1, page_size: 10});
+      console.log('response', response);
+      setData(response?.data?.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    getPosts();
+  }, []);
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
+  const _renderItem = ({item}: {item: any}) => {
+    console.log('item', item);
+    const {title, summary} = item;
+    console.log('data', data);
+    return (
+      <View
+        style={{
+          borderWidth: 1,
+          margin: 20,
+          borderRadius: 20,
+          overflow: 'hidden',
+        }}>
+        <Text
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            color: 'grey',
+            overflow: 'hidden',
+            borderRadius: 20,
+            padding: 10,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+          <Text
+            style={{
+              color: 'red',
+              fontSize: 28,
+            }}>
+            {title}
+            {'\n'}
+          </Text>
+          {summary}
+        </Text>
+      </View>
+    );
+  };
+  return (
+    <SafeAreaView
+      style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+      <FlatList
+        data={data}
+        renderItem={_renderItem}
+        ListEmptyComponent={<Text>No data</Text>}
+      />
+      <Button title="Butter CMS" onPress={getPosts} />
     </SafeAreaView>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;
+
+const styles = StyleSheet.create({});
