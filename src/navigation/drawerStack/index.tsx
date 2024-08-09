@@ -1,15 +1,12 @@
 import React from 'react';
 import {Text, Image, View} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import styles from './styles';
 import {images} from '../../assets';
 import Home from '../../module/home';
 import Settings from '../../module/Settings';
 import More from '../../module/More';
 import {ScreenNames} from '../screenNames';
-
-const Tab = createBottomTabNavigator();
 
 function TextLabel(focused: any, route: any) {
   const {name} = route;
@@ -37,7 +34,8 @@ function ImageLabel(iconName: any) {
   );
 }
 
-function BottomStack() {
+function DrawerStack() {
+  const Tab = createDrawerNavigator();
   return (
     <View style={styles.con}>
       <Tab.Navigator
@@ -105,4 +103,4 @@ function BottomStack() {
   );
 }
 
-export default BottomStack;
+export default DrawerStack;

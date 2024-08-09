@@ -1,16 +1,12 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {VARIANT} from '@env';
 // Import client-specific screens
-import {
-  ScreenNamesAlpha,
-  routeScreensAlpha,
-} from '../variants/variant-alpha/screenNames';
-import {routeScreensBeta} from '../variants/variant-beta/screenNames';
+import {ScreenNames, routeScreensAlpha, routeScreensBeta} from './screenNames';
 
-// const CLIENT = VARIANT ? 'alpha' : 'beta';
+const CLIENT = true ? 'alpha' : 'beta';
 
 const getScreens = () => {
-  switch (VARIANT) {
+  switch (CLIENT) {
     case 'alpha':
       return routeScreensAlpha;
     case 'beta':
@@ -27,7 +23,7 @@ const AppNavigator = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <Stack.Navigator initialRouteName={ScreenNamesAlpha.RootTab}>
+    <Stack.Navigator initialRouteName={ScreenNames.RootTab}>
       {Screens.map((screen: any) => (
         <Stack.Screen
           key={screen.name}
