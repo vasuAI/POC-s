@@ -10,6 +10,8 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import {Calendar, ICalendarEventBase, Mode} from 'react-native-big-calendar';
+import {events} from './mockData';
+import moment from 'moment';
 
 // import {Calendar, ICalendarEventBase, Mode} from './build';
 
@@ -23,7 +25,7 @@ export const BigCalendar = () => {
   const addEvent = React.useCallback(
     (start: Date) => {
       const title = 'new Event';
-      const end = dayjs(start).add(59, 'minute').toDate();
+      const end = moment(start).add(59, 'minutes').toDate();
       setAdditionalEvents([...additionalEvents, {start, end, title}]);
     },
     [additionalEvents, setAdditionalEvents],
@@ -32,7 +34,8 @@ export const BigCalendar = () => {
   const addLongEvent = React.useCallback(
     (start: Date) => {
       const title = 'new Long Event';
-      const end = dayjs(start).add(1, 'hour').add(59, 'minute').toDate();
+      const end = moment(start).add(1, 'hour').add(59, 'minutes').toDate();
+      // const end = dayjs(start).add(1, 'hour').add(59, 'minute').toDate();
       setAdditionalEvents([...additionalEvents, {start, end, title}]);
     },
     [additionalEvents, setAdditionalEvents],
@@ -88,7 +91,7 @@ export const BigCalendar = () => {
         </ScrollView>
         <Calendar
           height={height - 60}
-          events={[]}
+          events={events}
           onLongPressCell={addLongEvent}
           onPressCell={addEvent}
           swipeEnabled

@@ -98,7 +98,7 @@ const TimelineCalendarScreen = () => {
   };
 
   const timelineProps = {
-    format24h: true,
+    format24h: false,
     onBackgroundLongPress: createNewEvent,
     onBackgroundLongPressOut: approveNewEvent,
     // unavailableHours: [
@@ -119,7 +119,7 @@ const TimelineCalendarScreen = () => {
         showTodayButton
         disabledOpacity={0.6}>
         {/* <WeekCalendar testID={'wwww'} firstDay={1} markedDates={marked.current} /> */}
-        <ExpandableCalendar firstDay={1} markedDates={marked} />
+        {/* <ExpandableCalendar firstDay={1} markedDates={marked} /> */}
         <TimelineList
           events={eventsByDate}
           timelineProps={timelineProps}

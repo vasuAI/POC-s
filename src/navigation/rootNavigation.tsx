@@ -5,6 +5,7 @@ import Home from '../calendar/Home';
 import Calendar from '../calendar';
 import AgendaCalendarScreen from '../calendar/Agenda';
 import TimelineCalendarScreen from '../calendar/TimelineCalendar';
+import {BigCalendar} from '../big-calendar';
 
 const RootNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -14,6 +15,7 @@ const RootNavigation = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Calendar Day" component={TimelineCalendarScreen} />
         <Stack.Screen name="Calendar Week" component={AgendaCalendarScreen} />
+        <Stack.Screen name="Big Calendar" component={BigCalendar} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -41,6 +41,20 @@ const Home = () => {
         }}>
         <Text>Calendar Type Week</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('Big Calendar')}
+        style={{
+          borderWidth: 1,
+          borderColor: 'grey',
+          borderRadius: 10,
+          paddingVertical: 10,
+          paddingHorizontal: 20,
+          backgroundColor: themeColor,
+          marginBottom: 20,
+        }}>
+        <Text>Big Calendar</Text>
+      </TouchableOpacity>
     </View>
   );
 };
